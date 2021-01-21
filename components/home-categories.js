@@ -6,7 +6,7 @@ export default function HomeCategories({ categories }) {
       {categories &&
         categories.map((category) => (
           <div key={category.id} className={styles.categoryContainer}>
-            <h2>{category.titulo}</h2>
+            <h2 className={styles.categoryTitle}>{category.titulo}</h2>
             <div className={styles.imgContainer}>
               <div className={styles.imgWrapper}>
                 <img

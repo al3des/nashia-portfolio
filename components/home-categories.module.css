@@ -9,7 +9,17 @@
   flex-direction: column;
   height: 80vh;
   max-width: 250px;
+  position: relative;
 }
+
+.categoryTitle {
+  position: absolute;
+  color: white;
+  text-transform: uppercase;
+  transform: rotate(270deg) scale(6) translateX(45%);
+  bottom: 0;
+}
+
 .imgWrapper {
   height: 100%;
 }
