@@ -1,3 +1,5 @@
+import styles from "./container.module.css"
+
 export default function Container({ children }) {
-  return <div className="container mx-auto px-5">{children}</div>
+  return <div className={`${styles.container} `}>{children}</div>
 }

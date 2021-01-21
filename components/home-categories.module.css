@@ -1,0 +1,24 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.categoryContainer {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  max-width: 250px;
+}
+.imgWrapper {
+  height: 100%;
+}
+
+.imgContainer {
+  height: 100%;
+}
+
+.imgContainer img {
+  object-fit: cover;
+  height: 100%;
+}
