@@ -22,5 +22,6 @@ export async function getStaticProps({ preview = false }) {
   const categories = (await getAllCategories(preview)) || []
   return {
     props: { categories, preview },
+    revalidate: 1,
   }
 }
