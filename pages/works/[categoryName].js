@@ -1,11 +1,23 @@
+import { useRouter } from "next/router"
+import ErrorPage from "next/error"
+
 import { getAllCategories, getWorksByCategory } from "lib/graphcms"
 
 export default function Category({ works, preview }) {
-  return (
+  const router = useRouter()
+
+  if (!router.isFallback && !works) {
+    return <ErrorPage statusCode={404} />
+  }
+
+  return router.isFallback ? (
+    <h2>Loading…</h2>
+  ) : (
     <div>
-      {works.map((work) => (
-        <img key={work.id} src={work.coverImage.url} alt="" />
-      ))}
+      {works &&
+        works.map((work) => (
+          <img key={work.id} src={work.coverImage.url} alt="" />
+        ))}
     </div>
   )
 }
