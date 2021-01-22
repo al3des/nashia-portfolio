@@ -25,7 +25,7 @@ export default function HomeCategories({ categories }) {
             <h2 className={styles.categoryTitle}>{category.titulo}</h2>
             <div className={styles.imgContainer}>
               <div className={styles.imgWrapper}>
-                <Link href={`/works/${category.titulo}`}>
+                <Link href={`/categories/${category.titulo}`}>
                   <a>{getRandomCover(category)}</a>
                 </Link>
               </div>

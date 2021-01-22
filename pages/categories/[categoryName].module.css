@@ -1,0 +1,13 @@
+.worksContainer {
+  display: flex;
+  max-height: 70vh;
+}
+
+.worksItem {
+  max-width: 25%;
+  display: flex;
+}
+
+.worksItem img {
+  object-fit: cover;
+}
