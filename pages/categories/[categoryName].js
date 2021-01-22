@@ -9,7 +9,6 @@ import Link from "next/link"
 import { getAllCategories, getWorksByCategory } from "lib/graphcms"
 
 export default function Category({ works, preview, params }) {
-  console.log(params)
   const router = useRouter()
 
   if (!router.isFallback && !works) {

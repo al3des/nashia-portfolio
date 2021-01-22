@@ -1,18 +1,34 @@
+import { useRouter } from "next/router"
+import ErrorPage from "next/error"
 import Layout from "components/layout"
+import Head from "next/head"
+import { NASHI } from "lib/constants"
 import { getAllWorks, getWorkById } from "lib/graphcms"
 
-export default function Work({ work, preview, params }) {
-  let { title, height, width, technich, coverImage, category } = work
-  return (
+export default function Work({ work, preview }) {
+  const router = useRouter()
+
+  if (!router.isFallback && !work) {
+    return <ErrorPage statusCode={404} />
+  }
+
+  return router.isFallback ? (
+    <h2>Loading…</h2>
+  ) : (
     <Layout>
+      <Head>
+        <title>
+          {NASHI} | {work.title.toUpperCase()}
+        </title>
+      </Head>
       <div>
-        <h2>Title: {title}</h2>
+        <h2>Title: {work.title}</h2>
 
         <h3>
-          {width} x {height} cm
+          {work.width} x {work.height} cm
         </h3>
-        <h3>{technich}</h3>
-        <img src={coverImage.url} alt="" />
+        <h3>{work.technich}</h3>
+        <img src={work.coverImage.url} alt="" />
       </div>
     </Layout>
   )
@@ -24,7 +40,6 @@ export async function getStaticProps({ params, preview = false }) {
     props: {
       preview,
       work,
-      params,
     },
   }
 }
