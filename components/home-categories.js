@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Link from "next/link"
 import styles from "./home-categories.module.css"
 
 export default function HomeCategories({ categories }) {
@@ -25,7 +25,9 @@ export default function HomeCategories({ categories }) {
             <h2 className={styles.categoryTitle}>{category.titulo}</h2>
             <div className={styles.imgContainer}>
               <div className={styles.imgWrapper}>
-                {getRandomCover(category)}
+                <Link href={`/works/${category.titulo}`}>
+                  <a>{getRandomCover(category)}</a>
+                </Link>
               </div>
             </div>
           </div>

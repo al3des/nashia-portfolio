@@ -11,7 +11,6 @@ export default function Category({ works, preview }) {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  console.log(params)
   const works = await getWorksByCategory(params.categoryName, preview)
   return {
     props: {
