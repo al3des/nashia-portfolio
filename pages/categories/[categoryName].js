@@ -58,5 +58,6 @@ export async function getStaticPaths() {
       params: { categoryName: titulo },
     })),
     fallback: true,
+    revalidate: 1,
   }
 }
