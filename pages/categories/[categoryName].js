@@ -24,12 +24,12 @@ export default function Category({ works, preview, params }) {
           {NASHI} | {params.categoryName.toUpperCase()}
         </title>
       </Head>
-      <div className={styles.worksContainer}>
+      <div className={`${styles.worksContainer} min-h-screen`}>
         {works &&
           works.map((work) => (
             <div className={styles.worksItem}>
               <Link href={`/works/${work.id}`}>
-                <a>
+                <a className="flex">
                   <img key={work.id} src={work.coverImage.url} alt="" />
                 </a>
               </Link>

@@ -21,8 +21,13 @@ export default function HomeCategories({ categories }) {
     <div className={styles.wrapper}>
       {categories &&
         categories.map((category) => (
-          <div key={category.id} className={styles.categoryContainer}>
-            <h2 className={styles.categoryTitle}>{category.titulo}</h2>
+          <div
+            key={category.id}
+            className={`${styles.categoryContainer} min-h-full`}
+          >
+            <h2 className={`${styles.categoryTitle} sm:text-base`}>
+              {category.titulo}
+            </h2>
             <div className={styles.imgContainer}>
               <div className={styles.imgWrapper}>
                 <Link href={`/categories/${category.titulo}`}>
