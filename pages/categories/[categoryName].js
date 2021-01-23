@@ -48,6 +48,7 @@ export async function getStaticProps({ params, preview = false }) {
       works,
       params,
     },
+    revalidate: 1,
   }
 }
 
@@ -58,6 +59,5 @@ export async function getStaticPaths() {
       params: { categoryName: titulo },
     })),
     fallback: true,
-    revalidate: 1,
   }
 }
